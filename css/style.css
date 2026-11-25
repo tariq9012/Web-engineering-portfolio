@@ -1,0 +1,284 @@
+/* ===== Design tokens ===== */
+:root {
+  --ink: #1b2433;
+  --muted: #55627a;
+  --page: #f2f6f8;
+  --surface: #ffffff;
+  --accent: #0e7c86;
+  --accent-dark: #0a5c64;
+  --highlight: #ffe9a8;
+  --line: #cfd9e0;
+  --radius: 8px;
+  --space: 1.25rem;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--page);
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1rem; max-width: 70ch; }
+
+a { color: var(--accent-dark); }
+a:hover { color: var(--accent); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ===== Sticky header with Flexbox navigation ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.site-header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-header nav a {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius);
+  color: #dbe6ee;
+  text-decoration: none;
+}
+
+.site-header nav a:hover { background: var(--accent-dark); color: #ffffff; }
+.site-header nav a.active { background: var(--accent); color: #ffffff; }
+
+/* ===== Layout ===== */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+section { margin-bottom: 2.5rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space);
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space);
+}
+
+.card-row > .card { flex: 1 1 260px; }
+
+/* ===== Home hero ===== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--surface);
+  border-left: 8px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.hero img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--highlight);
+}
+
+.hero-text { flex: 1 1 280px; }
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.7rem;
+  margin: 0 0.3rem 0.4rem 0;
+  background: var(--highlight);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* ===== Lists ===== */
+ol, ul.content-list { padding-left: 1.4rem; }
+li { margin-bottom: 0.35rem; }
+
+/* ===== Tables ===== */
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 2px solid var(--accent-dark);
+}
+
+caption {
+  padding: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  color: var(--muted);
+}
+
+th, td {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+thead th { background: var(--accent-dark); color: #ffffff; }
+tbody tr:nth-child(even) { background: #eaf3f5; }
+tbody tr { transition: background 0.2s; }
+tbody tr:hover { background: var(--highlight); }
+
+/* ===== Favourite Media: CSS Grid two columns ===== */
+.media-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.post {
+  margin-bottom: var(--space);
+  padding: var(--space);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.post blockquote { margin: 0.5rem 0; padding-left: 0.9rem; border-left: 4px solid var(--accent); }
+.post footer { font-size: 0.9rem; color: var(--muted); }
+
+figure { margin: 0 0 var(--space); }
+figcaption { font-size: 0.9rem; color: var(--muted); padding-top: 0.3rem; }
+figure img { width: 100%; border-radius: var(--radius); border: 1px solid var(--line); }
+
+.video { margin-bottom: var(--space); }
+
+.video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius);
+  background: #000000;
+}
+
+/* ===== Contact ===== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.details dt { font-weight: bold; margin-top: 0.6rem; }
+.details dd { margin: 0; overflow-wrap: anywhere; }
+
+.map iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+/* ===== Form ===== */
+form label { display: block; margin: 1rem 0 0.3rem; font-weight: bold; }
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font: inherit;
+  color: var(--ink);
+  background: #ffffff;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+}
+
+form input:focus,
+form textarea:focus { border-color: var(--accent); outline: none; background: #f7fcfc; }
+
+form textarea { min-height: 140px; resize: vertical; }
+
+form button {
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.6rem;
+  font: inherit;
+  font-weight: bold;
+  color: #ffffff;
+  background: var(--accent);
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+form button:hover { background: var(--accent-dark); }
+
+/* ===== Footer ===== */
+.site-footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: #dbe6ee;
+  background: var(--ink);
+}
+
+.site-footer p { margin: 0 auto 0.3rem; }
+.site-footer a { color: var(--highlight); }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.35rem; }
+
+  .site-header { padding: 0.6rem 1rem; }
+  main { padding: 1.25rem 1rem; }
+
+  .media-layout,
+  .contact-layout { grid-template-columns: 1fr; }
+
+  .hero { padding: 1.25rem; justify-content: center; text-align: center; }
+  th, td { padding: 0.5rem 0.6rem; }
+}
