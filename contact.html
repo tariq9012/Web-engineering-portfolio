@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact details, Google Map, friends list and a contact form.">
+  <meta name="keywords" content="portfolio, HTML, CSS, BS(CS), Iqra University, web programming">
+  <meta name="author" content="Your Name">
+  <title>Contact | Tariq Jamil Portfolio</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Tariq Jamil Khan</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="media.html">Favourite Media</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Contact Me</h1>
+      <p>You can reach me using the details below or send a message with the form.</p>
+    </section>
+
+    <div class="contact-layout">
+      <section>
+        <h2>My details</h2>
+        <dl class="details card">
+          <dt>Name</dt>
+          <dd>Tariq Jamil Khan</dd>
+          <dt>Designation</dt>
+          <dd>BS(CS) Student, 6th Semester</dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:your.email@example.com">tariq858555@gmail</a></dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+920000000000">+92 300 0000000</a></dd>
+        </dl>
+
+        <h2>My friends</h2>
+        <div class="table-wrap">
+          <table>
+            <caption>Friends and their IDs</caption>
+            <thead>
+              <tr><th scope="col">Friend name</th><th scope="col">Roll no. / ID</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Afaq</td><td>41281</td></tr>
+              <tr><td>Abdullah</td><td>41000</td></tr>
+              <tr><td>Usman</td><td>41001</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Find me here</h2>
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Iqra+University+Islamabad+Campus+H-9&amp;output=embed" title="Google Map showing Iqra University Islamabad Campus H-9" loading="lazy" allowfullscreen></iframe>
+        </div>
+
+        <h2>Send a message</h2>
+        <form action="mailto:your.email@example.com" method="post" enctype="text/plain" class="card">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Tariq Jamil Khan. Built with HTML and CSS only.</p>
+    <p>CSC 337 Web Programming Languages, Iqra University Islamabad Campus (H-9)</p>
+    <p><a href="contact.html">Get in touch</a></p>
+  </footer>
+</body>
+</html>
